@@ -132,8 +132,8 @@ GestureDetector.OnDoubleTapListener{
 	public void gotoActions(View v)
 	{
 		Intent intent = new Intent(this, ActionsActivity.class);
-		intent.putExtra("X_POS", pos_x);
-		intent.putExtra("Y_POS", pos_y);
+		//intent.putExtra("X_POS", pos_x);
+		//intent.putExtra("Y_POS", pos_y);
 		startActivity(intent);
 	}
 }

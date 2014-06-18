@@ -36,6 +36,8 @@ GestureDetector.OnDoubleTapListener{
 	}
 
 
+
+
 	@Override
 	public boolean onDoubleTap(MotionEvent e) {
 		int index = e.getActionIndex();
@@ -124,9 +126,9 @@ GestureDetector.OnDoubleTapListener{
 	
 	public void gotoDone(View v)
 	{
-//		Intent intent = new Intent(this, Done.class);
-//		intent.putExtra("X_POS", pos_x);
-//		intent.putExtra("Y_POS", pos_y);
-//		startActivity(intent);
+		Intent intent = new Intent(this, ConfirmEntryActivity.class);
+	//	intent.putExtra("X_POS", pos_x);
+	//	intent.putExtra("Y_POS", pos_y);
+		startActivity(intent);
 	}
 }
