@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class SayActionsActivity extends Activity {
+	
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_say_actions);
@@ -26,6 +28,12 @@ public class SayActionsActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	public void gotoAsksForHelpActivity(View v) 
+	{
+		Intent intent = new Intent(this, AsksForHelpActivity.class);
+		startActivity(intent);
+	}
+	
 	public void startApproachActions(View v) {
 		// Intent intent = new Intent(this, ApproachActivity.class);
 		// startActivity(intent);
