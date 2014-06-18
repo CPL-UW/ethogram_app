@@ -3,14 +3,25 @@ package gls.app.makescape_ethogram;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class SayActionsActivity extends Activity {
+public class ConfirmEntryActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_say_actions);
+		setContentView(R.layout.activity_confirm_entry);
+
+		Time time = new Time();
+		time.setToNow();
+
+		// Create the text view
+		TextView textView = (TextView) findViewById(R.id.TimeEntry);
+		textView.setText(time.format3339(false));
+
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -36,8 +47,9 @@ public class SayActionsActivity extends Activity {
 		// startActivity(intent);
 	}
 
-	public void startAskHelp(View v) {
-		Intent intent = new Intent(this, ConfirmEntryActivity.class);
+	public void confirmButton(View v) {
+		Toast.makeText(this, "Entry saved", Toast.LENGTH_LONG).show();
+		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
 }

@@ -33,6 +33,10 @@
             android:name="gls.app.makescape_ethogram.SayActionsActivity"
             android:screenOrientation="landscape" >
         </activity>
+        <activity
+            android:name="gls.app.makescape_ethogram.ConfirmEntryActivity"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>
