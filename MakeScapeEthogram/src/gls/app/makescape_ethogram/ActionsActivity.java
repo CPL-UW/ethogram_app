@@ -8,9 +8,18 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class ActionsActivity extends Activity {
+	
+	private static String X_POS_SUBJECT = "gls.app.makescape_ethogram.x";
+	private static String Y_POS_SUBJECT = "gls.app.makescape_ethogram.y";
+	private float pos_x;
+	private float pos_y;
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_actions);
+		pos_x = (Float) getIntent().getExtras().get(X_POS_SUBJECT);
+		pos_y = (Float) getIntent().getExtras().get(Y_POS_SUBJECT);
+		
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,6 +47,8 @@ public class ActionsActivity extends Activity {
 
 	public void startSayActions(View v) {
 		Intent intent = new Intent(this, SayActionsActivity.class);
+		intent.putExtra(X_POS_SUBJECT, pos_x);
+		intent.putExtra(Y_POS_SUBJECT, pos_y);
 		startActivity(intent);
 	}
 }

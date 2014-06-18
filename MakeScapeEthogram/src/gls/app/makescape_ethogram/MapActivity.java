@@ -24,8 +24,8 @@ GestureDetector.OnGestureListener,
 GestureDetector.OnDoubleTapListener{
 
 	private static final String DEBUG_TAG = "gls.app.makescape_ethogram.debug";
-	private static final String X_POS = "gls.app.makescape_ethogram.x";
-	private static final String Y_POS = "gls.app.makescape_ethogram.y";
+	private static final String X_POS_SUBJECT = "gls.app.makescape_ethogram.x";
+	private static final String Y_POS_SUBJECT = "gls.app.makescape_ethogram.y";
 	private GestureDetectorCompat mDetector; 
 	private float pos_x;
 	private float pos_y;
@@ -132,8 +132,8 @@ GestureDetector.OnDoubleTapListener{
 	public void gotoActions(View v)
 	{
 		Intent intent = new Intent(this, ActionsActivity.class);
-		//intent.putExtra("X_POS", pos_x);
-		//intent.putExtra("Y_POS", pos_y);
+		intent.putExtra(X_POS_SUBJECT, pos_x);
+		intent.putExtra(Y_POS_SUBJECT, pos_y);
 		startActivity(intent);
 	}
 }
