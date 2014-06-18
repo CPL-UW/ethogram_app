@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void startEthogram(View v) {
-		Intent intent = new Intent(this, ActionsActivity.class);
+		Intent intent = new Intent(this, MapActivity.class);
 		startActivity(intent);
 	}
 

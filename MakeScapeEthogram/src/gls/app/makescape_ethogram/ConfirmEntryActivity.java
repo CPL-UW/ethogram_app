@@ -19,8 +19,13 @@ public class ConfirmEntryActivity extends Activity {
 		time.setToNow();
 
 		// Create the text view
-		TextView textView = (TextView) findViewById(R.id.TimeEntry);
-		textView.setText(time.format3339(false));
+		TextView timeEntryView = (TextView) findViewById(R.id.TimeEntry);
+		timeEntryView.setText(time.format3339(false));
+		TextView subjectEntryView = (TextView) findViewById(R.id.subject);
+		subjectEntryView.setText(DataSingleton.getSingleton()
+				.getSubjectString());
+		TextView targetEntryView = (TextView) findViewById(R.id.target);
+		targetEntryView.setText(DataSingleton.getSingleton().getTargetString());
 
 	}
 

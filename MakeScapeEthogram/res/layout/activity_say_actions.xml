@@ -48,7 +48,7 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="startAskHelp" >
+            android:onClick="gotoAsksForHelpActivity" >
 
             <TextView
                 android:id="@+id/ask_help_text"
@@ -62,8 +62,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="startAskHelp" >
+            android:layout_height="wrap_content" >
 
             <TextView
                 android:id="@+id/ask_question_text"
@@ -77,8 +76,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="startAskHelp" >
+            android:layout_height="wrap_content" >
 
             <TextView
                 android:id="@+id/justifies_design_text"

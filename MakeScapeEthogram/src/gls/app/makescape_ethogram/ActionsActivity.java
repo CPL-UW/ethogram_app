@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class ActionsActivity extends Activity {
+
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_actions);
