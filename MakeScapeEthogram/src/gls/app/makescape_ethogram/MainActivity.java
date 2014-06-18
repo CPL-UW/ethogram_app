@@ -45,8 +45,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void startEthogram(View v) {
-
-		Intent intent = new Intent(this, MapActivity.class);
+		Intent intent = new Intent(this, ActionsActivity.class);
 		startActivity(intent);
 	}
 
@@ -54,7 +53,6 @@ public class MainActivity extends Activity {
 	 * A placeholder fragment containing a simple view.
 	 */
 	public static class PlaceholderFragment extends Fragment {
-
 
 		public PlaceholderFragment() {
 		}
@@ -67,6 +65,5 @@ public class MainActivity extends Activity {
 			return rootView;
 		}
 	}
-
 
 }

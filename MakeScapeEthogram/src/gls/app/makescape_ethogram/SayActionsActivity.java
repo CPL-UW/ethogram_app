@@ -7,10 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class ActionsActivity extends Activity {
+public class SayActionsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_actions);
+		setContentView(R.layout.activity_say_actions);
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,10 +34,5 @@ public class ActionsActivity extends Activity {
 	public void startDoActions(View v) {
 		// Intent intent = new Intent(this, DoActivity.class);
 		// startActivity(intent);
-	}
-
-	public void startSayActions(View v) {
-		Intent intent = new Intent(this, SayActionsActivity.class);
-		startActivity(intent);
 	}
 }
