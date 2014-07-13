@@ -38,6 +38,14 @@
         <activity
             android:name="gls.app.makescape_ethogram.ConfirmEntryActivity"
             android:screenOrientation="landscape" />
+        
+        <activity
+            android:name="gls.app.makescape_ethogram.ActionsNewActivity"
+            android:screenOrientation="landscape" />
+        
+          <activity
+            android:name="gls.app.makescape_ethogram.SelectTargetActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

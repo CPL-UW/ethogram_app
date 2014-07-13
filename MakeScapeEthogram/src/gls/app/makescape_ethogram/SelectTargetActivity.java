@@ -2,40 +2,35 @@ package gls.app.makescape_ethogram;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.*;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebView.FindListener;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import android.view.GestureDetector;
 
-public class MapActivity extends Activity implements
+public class SelectTargetActivity extends Activity implements
 		GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
+
+	private static final String DEBUG_TAG = "gls.app.makescape_ethogram.debug";
 	private GestureDetectorCompat mDetector;
 	private float pos_x;
 	private float pos_y;
 	private RelativeLayout layout;
-	private int numDoubleClick;
+	private int numDoubleClick= 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_map);
-		Toast.makeText(this, "Mark the position of the Subject",
+		setContentView(R.layout.activity_map_2);
+		Toast.makeText(this, "Mark the position of the Target",
 				Toast.LENGTH_LONG).show();
 		mDetector = new GestureDetectorCompat(this, this);
 		mDetector.setOnDoubleTapListener(this);
-
 	}
 
 	@Override
@@ -47,7 +42,7 @@ public class MapActivity extends Activity implements
 			int pointerId = e.getPointerId(index);
 			
 			ImageView image = new ImageView(this);
-			image.setImageResource(R.drawable.subject);
+			image.setImageResource(R.drawable.target);
 			
 			
 	//		
@@ -141,15 +136,14 @@ public class MapActivity extends Activity implements
 		return super.onTouchEvent(event);
 	}
 
-	public void gotoActions(View v) {
-		//DataSingleton.getSingleton().setSubjectString(pos_x + ", " + pos_y);
-		//Intent intent = new Intent(this, ActionsActivity.class);
-		Log.d("Map", "lflfl");
-		Intent intent = new Intent(this, ActionsNewActivity.class);
+	public void gotoDone(View v) {
+		DataSingleton.getSingleton().setTargetString(pos_x + ", " + pos_y);
+		Intent intent = new Intent(this, ConfirmEntryActivity.class);
+
 		startActivity(intent);
 	}
 	
-	public void clearActivity(View v)
+	public void clear(View v)
 	{
 		recreate();
 	}

@@ -11,7 +11,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="@string/clear_button"
-        android:layout_width="@dimen/button_width_dim" />
+        android:layout_width="@dimen/button_width_dim"
+        android:onClick="clear" />
 
     <Button
         android:id="@+id/button2"
@@ -24,10 +25,12 @@
 	
     <!-- TODO: change this to an image -->
     <Button
+        android:text="Table"
         android:id="@+id/button3"
         android:layout_width="500dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true" 
+        android:background="@drawable/table"/>
 
 </RelativeLayout>

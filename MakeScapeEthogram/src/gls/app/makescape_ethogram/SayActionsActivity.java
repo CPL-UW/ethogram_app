@@ -28,7 +28,7 @@ public class SayActionsActivity extends Activity {
 	}
 
 	public void gotoAsksForHelpActivity(View v) {
-		Intent intent = new Intent(this, AsksForHelpActivity.class);
+		Intent intent = new Intent(this, SelectTargetActivity.class);
 		startActivity(intent);
 	}
 

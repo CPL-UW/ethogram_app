@@ -14,4 +14,50 @@
     <string name="clear_button">Clear</string>
     <string name="actions_button">Actions</string>
 
+    
+
+    <string-array name="headlines">
+        <item>Does Things</item>
+        <item>Approaches the Exhibit</item>
+        <item>Says Things</item>
+    </string-array>
+
+    <string-array name="options_do">
+        <item>Picks up a dowel</item>
+        <item>Combines dowels</item>
+        <item>Creates a working thing</item>
+        <item>Modifies an already working thing</item>
+        <item>Touches another child\'s design</item>
+        <item>Tries to create a group to work on something</item>
+     
+       
+
+    </string-array>
+
+    <string-array name="options_approach">
+       
+        <item>Look at the exhibit and stays longer than ~5s</item>
+        <item>Looks at other children using the exhibit</item>
+        <item>Enters the use space</item>
+        <item>Looks at any of the museum-text in the use space</item>
+
+    </string-array>
+
+    <string-array name="options_say">
+        
+        <item>Asks another child for help</item>
+        <item>Tells another child to do something</item>
+        <item>Asks a design-oriented question</item>
+        <item>Answers a design-oriented question</item>
+        <item>Says something design-oriented</item>
+        <item>Explains their design to someone else</item>
+        <item>Justifies a design choice</item>
+        <item>Says something about a design failing</item>
+        <item>Suggests a fix after a fail</item>
+        
+
+    </string-array>
+    
+    
+    
 </resources>
