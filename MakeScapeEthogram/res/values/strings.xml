@@ -14,6 +14,14 @@
     <string name="clear_button">Clear</string>
     <string name="actions_button">Actions</string>
 
+    <!-- Confirm Entry Screen -->
+    <string name="confirm_entry_time">Time</string>
+    <string name="confirm_entry_subject">Subject</string>
+    <string name="confirm_entry_target">Target</string>
+    <string name="confirm_entry_action">Action</string>
+    <string name="confirm_entry_notes">Notes</string>
+    <string name="confirm_entry_button_confirm">Confirm</string>
+    <string name="confirm_entry_button_back">Back</string>
     
 
     <string-array name="headlines">
