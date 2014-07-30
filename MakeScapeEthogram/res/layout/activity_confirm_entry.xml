@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -12,102 +11,104 @@
         android:gravity="center" >
 
         <TableLayout
-            android:id="@+id/entry_TableLayout"
+            android:id="@+id/tableLayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center|top"
-            tools:ignore="UselessParent" >
+            android:gravity="center|top" >
 
             <TableRow
-                android:id="@+id/time_tableRow"
+                android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/time_textView"
+                    android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/confirm_entry_time"
+                    android:text="Time"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/timeEntry"
+                    android:id="@+id/TimeEntry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </TableRow>
 
             <TableRow
-                android:id="@+id/subject_tableRow"
+                android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/subject_textView"
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/confirm_entry_subject"
+                    android:text="Subject"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/subjectEntry"
+                    android:id="@+id/subject"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="ID #1"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </TableRow>
 
             <TableRow
-                android:id="@+id/target_tableRow"
+                android:id="@+id/tableRow3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/target_textView"
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/confirm_entry_target"
+                    android:text="Target"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/targetEntry"
+                    android:id="@+id/target"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="ID #2"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </TableRow>
 
             <TableRow
-                android:id="@+id/action_TableRow"
+                android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/action_textView"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/confirm_entry_action"
+                    android:text="Action"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/actionEntry"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/say_ask_help"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </TableRow>
 
             <TableRow
-                android:id="@+id/notes_TableRow"
+                android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/notes_textView"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/confirm_entry_notes"
+                    android:text="Notes"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <EditText
-                    android:id="@+id/notesEntry"
+                    android:id="@+id/editText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine" />
@@ -121,19 +122,18 @@
         android:gravity="center" >
 
         <Button
-            android:id="@+id/confirm_button"
+            android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="confirmButton"
-            android:text="@string/confirm_entry_button_confirm"
-            tools:ignore="ButtonStyle" />
+            android:text="Confirm"
+            android:onClick="confirmButton" />
 
         <Button
-            android:id="@+id/back_button"
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/confirm_entry_button_back"
-            tools:ignore="ButtonStyle" />
+            android:text="Back" />
+
     </LinearLayout>
 
 </LinearLayout>

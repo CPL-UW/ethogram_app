@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,10 +45,6 @@ public class MainActivity extends Activity {
 	}
 
 	public void startEthogram(View v) {
-		Time time = new Time();
-		time.setToNow();
-		String timeString = time.format3339(false);
-		DataSingleton.getSingleton().setTimeString(timeString);
 		Intent intent = new Intent(this, MapActivity.class);
 		startActivity(intent);
 	}

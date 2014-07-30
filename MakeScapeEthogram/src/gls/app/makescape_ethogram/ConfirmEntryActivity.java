@@ -3,7 +3,6 @@ package gls.app.makescape_ethogram;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract.Contacts.Data;
 import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,16 +15,17 @@ public class ConfirmEntryActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_confirm_entry);
 
+		Time time = new Time();
+		time.setToNow();
+
 		// Create the text view
-		TextView timeEntryView = (TextView) findViewById(R.id.timeEntry);
-		timeEntryView.setText(DataSingleton.getSingleton().getTimeString());
-		TextView subjectEntryView = (TextView) findViewById(R.id.subjectEntry);
+		TextView timeEntryView = (TextView) findViewById(R.id.TimeEntry);
+		timeEntryView.setText(time.format3339(false));
+		TextView subjectEntryView = (TextView) findViewById(R.id.subject);
 		subjectEntryView.setText(DataSingleton.getSingleton()
 				.getSubjectString());
-		TextView targetEntryView = (TextView) findViewById(R.id.targetEntry);
+		TextView targetEntryView = (TextView) findViewById(R.id.target);
 		targetEntryView.setText(DataSingleton.getSingleton().getTargetString());
-		TextView actionEntryView = (TextView) findViewById(R.id.actionEntry);
-		actionEntryView.setText(DataSingleton.getSingleton().getActionString());
 
 	}
 

@@ -13,21 +13,21 @@
     <string name="say_justifies_design">Justifies a design choice</string>
     <string name="clear_button">Clear</string>
     <string name="actions_button">Actions</string>
+    <string name="select_options">Which Experiment?</string>
 
-    <!-- Confirm Entry Screen -->
-    <string name="confirm_entry_time">Time</string>
-    <string name="confirm_entry_subject">Subject</string>
-    <string name="confirm_entry_target">Target</string>
-    <string name="confirm_entry_action">Action</string>
-    <string name="confirm_entry_notes">Notes</string>
-    <string name="confirm_entry_button_confirm">Confirm</string>
-    <string name="confirm_entry_button_back">Back</string>
-    
+
+    <string-array name="id1"></string-array>
 
     <string-array name="headlines">
         <item>Does Things</item>
         <item>Approaches the Exhibit</item>
         <item>Says Things</item>
+    </string-array>
+    
+    <string-array name="experiments">
+        <item>Experiment 1 </item>
+        <item>Experiment 2 </item>
+        <item>Experiment 3 </item>
     </string-array>
 
     <string-array name="options_do">

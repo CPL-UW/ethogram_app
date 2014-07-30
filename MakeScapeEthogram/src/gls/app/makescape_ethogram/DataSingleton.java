@@ -1,39 +1,23 @@
 package gls.app.makescape_ethogram;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DataSingleton {
 	private static final DataSingleton SINGLETON = new DataSingleton();
 
 	private DataSingleton() {
-		timeString = new String();
 		subjectString = new String();
 		targetString = new String();
-		actionString = new String();
+		headline_map = new HashMap<Integer, Headline>();
 	}
 
 	public static DataSingleton getSingleton() {
 		return SINGLETON;
 	}
-
-	private String timeString;
+	private Map<Integer, Headline> headline_map;
 	private String subjectString;
 	private String targetString;
-	private String actionString;
-
-	public String getTimeString() {
-		return timeString;
-	}
-
-	public void setTimeString(String timeString) {
-		this.timeString = timeString;
-	}
-
-	public String getActionString() {
-		return actionString;
-	}
-
-	public void setActionString(String actionString) {
-		this.actionString = actionString;
-	}
 
 	public String getSubjectString() {
 		return subjectString;

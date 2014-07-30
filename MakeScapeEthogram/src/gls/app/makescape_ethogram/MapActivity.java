@@ -142,7 +142,8 @@ public class MapActivity extends Activity implements
 	}
 
 	public void gotoActions(View v) {
-		DataSingleton.getSingleton().setSubjectString(pos_x + ", " + pos_y);
+		//DataSingleton.getSingleton().setSubjectString(pos_x + ", " + pos_y);
+		//Intent intent = new Intent(this, ActionsActivity.class);
 		Log.d("Map", "lflfl");
 		Intent intent = new Intent(this, ActionsNewActivity.class);
 		startActivity(intent);

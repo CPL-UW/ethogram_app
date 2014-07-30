@@ -15,7 +15,7 @@ import android.widget.ListView;
 
 
 public class FragmentActionsHeadline extends Fragment implements AdapterView.OnItemClickListener{
-	  ListView list;
+	  	ListView list;
 	    Communicator communicator;
 
 	        @Override
@@ -30,6 +30,7 @@ public class FragmentActionsHeadline extends Fragment implements AdapterView.OnI
 
 	    @Override
 	    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+	    	
 	        communicator.respond(position);
 	    }
 
