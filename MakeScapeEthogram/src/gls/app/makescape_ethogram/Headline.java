@@ -7,6 +7,10 @@ public class Headline {
 	private String headline; 
 	ArrayList<String> options;
 	
+	public Headline (){
+		options = new ArrayList<String>(); 
+	}
+	
 	public String getHeadline() {
 		return headline;
 	}

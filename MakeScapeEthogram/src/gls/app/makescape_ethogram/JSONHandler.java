@@ -1,6 +1,8 @@
 package gls.app.makescape_ethogram;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,8 +45,9 @@ public class JSONHandler {
 		this.options_map = options_map;
 	}
 
-	public Map<Integer, Headline> parseJSON() throws JSONException
+	public void parseJSON() throws JSONException
 	{
+		Log.d("testando", "something");
 		/*{
 		    "Root": {
 		        "num_headlines": 2,
@@ -76,27 +79,40 @@ public class JSONHandler {
 		options_map = new HashMap<Integer, Headline>();
 
 		JSONObject object = json.getJSONObject("Root");
-		int num_headlines = json.getInt("num_headlines");
+		int num_headlines = 2;
+		try {
+			num_headlines = object.getInt("num_headlines");	
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.d("jsonhandler", e.toString());
+		}
+		
 
+		
 		headline_array = new String[num_headlines];
 
 		for (int i = 0; i < num_headlines; i++) {
-			String headline = json.getString("headline_"+i);
+			String headline = object.getString("headline_" + (i+1) );
 			headline_array[i] = headline; //redundant
 
-			int num_options = json.getInt("num_options_"+i);
-			JSONArray options = json.getJSONArray("options_"+i);
+			int num_options = object.getInt("num_options");
+			JSONArray options = object.getJSONArray("options_"+(i+1));
 			Headline myHeadline = new Headline();
 			myHeadline.setHeadline(headline);
 			
 			for(int j=0; j< options.length(); j++)
 			{
-				String strParsedValue =options.getJSONObject(j).getString("options_1_"+j).toString();
+				String strParsedValue =options.getJSONObject(j).getString("options_1_"+(j+1)).toString();
 				myHeadline.options.add(strParsedValue);
 
 			}
 			options_map.put(i, myHeadline);
 		}
-		return options_map;
+		Log.d("JSONHandler", headline_array[0]);
+		DataSingleton.getSingleton().setHeadlinesArray(headline_array);
+		
+		//how to put this in the singleton class
+		
 	}
 }
