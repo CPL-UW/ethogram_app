@@ -22,138 +22,45 @@ public class FragmentActionsOptions extends Fragment implements AdapterView.OnIt
 	TextView text;
 	ListView list;
 	int headline_position;
+	private int father_position;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_options_layout, container, false);
-		//text = (TextView) view.findViewById(R.id.textView);
 		list = (ListView) view.findViewById(R.id.listView);
 		return view;
 	}
 
+	
 	public void changeData(int position) {
-		//String[] description = getResources().getStringArray(R.array.description);
-		//text.setText(description[position]);
-		//String[] head = getResources().getStringArray(R.array.headlines_2);
+
 		ArrayAdapter adapter;
 		headline_position = position;
 		Map<Integer, Headline> map = DataSingleton.getSingleton().getHeadline_map();
 		adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, map.get(position).getOptions());
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(this);
+		this.father_position = position;
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		// TODO Auto-generated method stub
-		if(headline_position == 0){ //Does Things
-			Intent intent = null ; 
-			switch(position)
-			{
-			case 0:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 1:
-				//Toast.makeText(getActivity(), position + " was clicked", Toast.LENGTH_LONG).show();
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 2:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 3:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 4:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 5:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			default:
-				break;
-			}
+		Intent intent = null ;
+		
+		Map<Integer, Headline> map = DataSingleton.getSingleton().getHeadline_map();
+		if (map.get(father_position).getHasTarget().contains(position))
+		{
+			intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);
+			 startActivity(intent);
 		}
-		else if (headline_position == 1){ //Approaches the exhibit
-			Intent intent = null ; 
-			
-			
-			switch(position)
-			{
-			case 0:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				startActivity(intent);
-				break;
-			case 1:
-				//Toast.makeText(getActivity(), position + " was clicked", Toast.LENGTH_LONG).show();
-				 intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);
-				 startActivity(intent);
-				break;
-			case 2:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 3:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			default:
-				break;
-			}
-			
-			
+		
+		else 
+		{
+			intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
+			startActivity(intent);
 		}
-		else if (headline_position == 2){ // Says Things
-			Intent intent = null ; 
-			switch(position)
-			{
-			case 0:
-				intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);
-				 startActivity(intent);
-				break;
-			case 1:
-				//Toast.makeText(getActivity(), position + " was clicked", Toast.LENGTH_LONG).show();
-				intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);
-				 startActivity(intent);
-				break;
-			case 2:
-				intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);
-				 startActivity(intent);
-				break;
-			case 3:
-				intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);
-				 startActivity(intent);
-				break;
-			case 4:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 5:
-				intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);
-				 startActivity(intent);
-				break;
-			case 6:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 7:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			case 8:
-				intent = new Intent(getActivity().getBaseContext(), ConfirmEntryActivity.class);
-				 startActivity(intent);
-				break;
-			default:
-				break;
-			}
-		}
+				
 	}
 
 }

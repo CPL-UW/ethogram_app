@@ -29,43 +29,28 @@ public class SelectOptionsList extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_select_options_list);
 
-		//This is the begin of the example.
-		//Before this, the app should get the JSON object 
-		//STEPS: 
-		//	1- Get the JSON code from the server based on the experiment (this code should do this) 
-		// 	2- Use the JSONObject to populate the file with the headlines and options. ( this code should do this)
-		//	3- Use the values/string using the database. 
+     	String json = "{\"Root\" : {\"num_headlines\": 2,\"headline_1\": \"one value\",\"options_1\":" +
+     			" [{\"options_1_1\": \"sub1_attr_value\", \"options_1_1_hasTarget\" : \"no\"},{\"options_1_2\":" +
+     			" \"sub1_attr_value\", \"options_1_2_hasTarget\" : \"no\"}], \"headline_2\": \"one value\",\"options_2\": " +
+     			"[{\"options_2_1\": \"sub2_attr_value\", \"options_2_1_hasTarget\" : \"yes\"},{\"options_2_2\": " +
+     			"\"sub2_attr_value\", \"options_2_2_hasTarget\" : \"yes\"}]}}";
 
-			
-		//String json = "{\"Root\": {\"attr1\": \"ona value\",\"attr2\": \"two value\",\"sbu\": {\"sub1\": [{	\"sub1_attr\": \"sub1_attr_value\"},{\"sub1_attr\": \"sub2_attr_value\"	}]}}}";
-     	String json = "{\"Root\" : {\"num_headlines\": 2,\"headline_1\": \"one value\",\"options_1\": [{\"options_1_1\": \"sub1_attr_value\"},{\"options_1_2\": \"sub1_attr_value\"}], \"headline_2\": \"one value\",\"options_2\": [{\"options_2_1\": \"sub2_attr_value\"},{\"options_2_2\": \"sub2_attr_value\"}]}}";
-     	//String teste = "{\"errors\":[{\"message\":\"The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.\",\"code\":64}]}";
-     	//Gson gson =  new Gson();
-     	//String string_to_parse= gson.toJson(teste);
 		try {
-			Log.d("before", "this");
 			JSONObject jsonObject = new JSONObject(json);
-			
-			Log.d("after", "this");
-			//Json Parsing
-			//parseJson(jsonObject);
 			
 			JSONHandler handler = new JSONHandler(jsonObject);
 			
 			handler.parseJSON();
-			Log.d("teste", "something");
 			
 
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
-			Log.d("teste", e.toString());
+			Log.d("name", e.toString());
 			
 		}
 		
-		//This is the end of the example.
-
-
+		Log.d("after", "this is after");
 		ListView lv = (ListView) findViewById(R.id.list_options);
 
 		ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.experiments,android.R.layout.simple_list_item_1);

@@ -6,9 +6,19 @@ public class Headline {
 
 	private String headline; 
 	ArrayList<String> options;
+	ArrayList<Integer> hasTarget;
 	
+	public ArrayList<Integer> getHasTarget() {
+		return hasTarget;
+	}
+
+	public void setHasTarget(ArrayList<Integer> hasTarget) {
+		this.hasTarget = hasTarget;
+	}
+
 	public Headline (){
 		options = new ArrayList<String>(); 
+		hasTarget = new ArrayList<Integer>();
 	}
 	
 	public String getHeadline() {

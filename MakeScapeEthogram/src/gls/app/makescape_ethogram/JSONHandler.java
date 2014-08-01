@@ -48,27 +48,30 @@ public class JSONHandler {
 	public void parseJSON() throws JSONException
 	{
 		
+		
 		/*{
 		    "Root": {
 		        "num_headlines": 2,
-		        "headline_1": "onevalue",
-		        "num_options_1": 2,
+		        "headline_1": "onevalue",		        
 		        "options_1": [
 		            {
-		                "options_1_1": "sub1_attr_value"
+		                "options_1_1": "sub1_attr_value", 
+		                "options_1_1_hasTarget" : "no"
 		            },
 		            {
-		                "options_1_2": "sub2_attr_value"
+		                "options_1_2": "sub2_attr_value",
+		                "options_1_2_hasTarget" : "no"
 		            }
 		        ],
-		        "headline_2": "onevalue",
-		        "num_options_2": 2,
+		        "headline_2": "onevalue",		        
 		        "options_2": [
 		            {
-		                "options_2_1": "sub1_attr_value"
+		                "options_2_1": "sub1_attr_value",
+		                "options_2_1_hasTarget" : "no"
 		            },
 		            {
-		                "options_2_2": "sub2_attr_value"
+		                "options_2_2": "sub2_attr_value",
+		                "options_2_2_hasTarget" : "no"
 		            }
 		        ]
 		    }
@@ -87,12 +90,15 @@ public class JSONHandler {
 			Log.d("jsonhandler", e.toString());
 		}
 		
+		
+		
 		headline_array = new String[num_headlines];
 
 		for (int i = 0; i < num_headlines; i++) {
 			String headline = object.getString("headline_" + (i+1) );
+			
 			headline_array[i] = headline; //redundant
-
+			
 			
 			JSONArray options = object.getJSONArray("options_"+(i+1));
 			Headline myHeadline = new Headline();
@@ -101,6 +107,14 @@ public class JSONHandler {
 			for(int j=0; j< options.length(); j++)
 			{
 				String strParsedValue =options.getJSONObject(j).getString("options_"+ (i+1)+"_" +(j+1)).toString();
+				String hasTargetstr =options.getJSONObject(j).getString("options_"+ (i+1)+"_" +(j+1) + "_hasTarget").toString();
+				
+				if(hasTargetstr.equals("yes")){
+				
+					myHeadline.hasTarget.add(j);
+					
+				}
+				
 				myHeadline.options.add(strParsedValue);
 
 			}
