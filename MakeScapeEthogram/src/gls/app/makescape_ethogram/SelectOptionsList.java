@@ -38,10 +38,10 @@ public class SelectOptionsList extends Activity {
 
 			
 		//String json = "{\"Root\": {\"attr1\": \"ona value\",\"attr2\": \"two value\",\"sbu\": {\"sub1\": [{	\"sub1_attr\": \"sub1_attr_value\"},{\"sub1_attr\": \"sub2_attr_value\"	}]}}}";
-     	String json = "{\"Root\" : {\"num_headlines\": 1,\"headline_1\": \"one value\",\"num_options\": 2,\"options_1\": [{\"options_1_1\": \"sub1_attr_value\"},{\"options_1_2\": \"sub2_attr_value\"}]}}";
-     	String teste = "{\"errors\":[{\"message\":\"The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.\",\"code\":64}]}";
-     	Gson gson =  new Gson();
-     	String string_to_parse= gson.toJson(teste);
+     	String json = "{\"Root\" : {\"num_headlines\": 2,\"headline_1\": \"one value\",\"options_1\": [{\"options_1_1\": \"sub1_attr_value\"},{\"options_1_2\": \"sub1_attr_value\"}], \"headline_2\": \"one value\",\"options_2\": [{\"options_2_1\": \"sub2_attr_value\"},{\"options_2_2\": \"sub2_attr_value\"}]}}";
+     	//String teste = "{\"errors\":[{\"message\":\"The Twitter REST API v1 is no longer active. Please migrate to API v1.1. https://dev.twitter.com/docs/api/1.1/overview.\",\"code\":64}]}";
+     	//Gson gson =  new Gson();
+     	//String string_to_parse= gson.toJson(teste);
 		try {
 			Log.d("before", "this");
 			JSONObject jsonObject = new JSONObject(json);

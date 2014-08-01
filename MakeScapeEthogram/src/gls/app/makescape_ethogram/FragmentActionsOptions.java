@@ -1,10 +1,13 @@
 package gls.app.makescape_ethogram;
 
+import java.util.Map;
+
 import android.app.Fragment;
 
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,22 +37,8 @@ public class FragmentActionsOptions extends Fragment implements AdapterView.OnIt
 		//String[] head = getResources().getStringArray(R.array.headlines_2);
 		ArrayAdapter adapter;
 		headline_position = position;
-
-		switch (position)
-		{
-		case 0:
-			adapter = ArrayAdapter.createFromResource(getActivity(), R.array.options_do,android.R.layout.simple_list_item_1);
-			break;
-		case 1:
-			adapter = ArrayAdapter.createFromResource(getActivity(), R.array.options_approach,android.R.layout.simple_list_item_1);
-			break;
-		case 2:
-			adapter = ArrayAdapter.createFromResource(getActivity(), R.array.options_say,android.R.layout.simple_list_item_1);
-			break;
-		default:
-			adapter = ArrayAdapter.createFromResource(getActivity(), R.array.options_do,android.R.layout.simple_list_item_1);
-		}
-
+		Map<Integer, Headline> map = DataSingleton.getSingleton().getHeadline_map();
+		adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, map.get(position).getOptions());
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(this);
 	}
