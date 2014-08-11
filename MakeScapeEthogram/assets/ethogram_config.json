@@ -1,0 +1,95 @@
+{
+	"Root" : 
+		{ 	
+			"num_headlines": 2, 
+			"headline_1" : "Do",
+			"options_1" : 
+			[
+				{
+					"options_1_1" : "Add Block",
+					"options_1_1_hasTarget" : "no"
+				},
+				{
+					"options_1_2" : "Adds more than one block",
+					"options_1_2_hasTarget" : "no"
+				},
+				{
+					"options_1_3" : "Catches a Fish",
+					"options_1_3_hasTarget" : "no"
+				},
+				{
+					"options_1_4" : "Completes circuit",
+					"options_1_4_hasTarget" : "no"
+				},
+				{
+					"options_1_5" : "Connects 2 Blocks",
+					"options_1_5_hasTarget" : "no"
+				},
+				{
+					"options_1_6" : "Looks at another player's cicuit",
+					"options_1_6_hasTarget" : "yes"
+				},
+				{
+					"options_1_7" : "Looks at demo video",
+					"options_1_7_hasTarget" : "no"
+				},
+				{
+					"options_1_8" : "Looks at leaderboard",
+					"options_1_8_hasTarget" : "no"
+				},
+				{
+					"options_1_9" : "Takes block from another Player space",
+					"options_1_9_hasTarget" : "yes"
+				},
+				{
+					"options_1_10" : "Touches another player's circuit",
+					"options_1_1_hasTarget" : "yes"
+				},
+				{
+					"options_1_11" : "Takes block from another Player space",
+					"options_1_11_hasTarget" : "yes"
+				}
+			],
+			
+			"headline_2" : "Say",
+			"options_2" : 
+			[
+				{
+					"options_2_1" : "Answers design-oriented question",
+					"options_2_1_hasTarget" : "no"
+				},
+				{
+					"options_2_2" : "Argues game decision",
+					"options_2_2_hasTarget" : "no"
+				},
+				{
+					"options_2_3" : "Asks for help with game",
+					"options_2_3_hasTarget" : "no"
+				},
+				{
+					"options_2_4" : "Asks to borrow block",
+					"options_2_4_hasTarget" : "no"
+				},
+				{
+					"options_2_5" : "Explains circuit design to someone else",
+					"options_2_5_hasTarget" : "no"
+				},
+				{
+					"options_2_6" : "Talks about leaderboard",
+					"options_2_6_hasTarget" : "no"
+				},
+				{
+					"options_2_7" : "Talks about a design failing",
+					"options_2_7_hasTarget" : "no"
+				},
+				{
+					"options_2_8" : "Justifies a design choice",
+					"options_2_8_hasTarget" : "no"
+				},					
+				{
+					"options_2_9" : "Suggests a fix after a fail",
+					"options_2_9_hasTarget" : "no"
+				}
+			]		
+		}
+}

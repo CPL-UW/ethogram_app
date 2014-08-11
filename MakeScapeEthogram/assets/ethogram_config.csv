@@ -1,0 +1,29 @@
+Action Type,Action Name,hasTarget
+Do,Adds Block,no
+Do,Adds more than one block,no
+Do,Catches a Fish,no
+Do,Completes circuit,no
+Do,Connects 2 Blocks,no
+Do,Enters exhibit area,no
+Do,Looks at another player's design,yes
+Do,Looks at demo video,no
+Do,Looks at exhibit information,no
+Do,Looks at leaderboard,no
+Do,Looks at the exhibit and stays (over 5 seconds),no
+Do,Picks up block,no
+Do,Takes block from another Player space,yes
+Do,Touches another player's design,yes
+Do,Watches entire demo video,no
+Do,Watches player using exhibit,yes
+Say,Answers design-oriented question,yes
+Say,Argues game decision,yes
+Say,Articulates game decision,yes
+Say,Asks design-oriented question,yes
+Say,Asks for help with game,yes
+Say,Asks to borrow block,yes
+Say,Explains design to someone else,yes
+Do,Takes block from another Player space,yes
+Say,Justifies a design choice,yes
+Say,Suggests a fix after a fail,yes
+Say,Talks about a design failing ,yes
+Say,Talks about leaderboard,yes
