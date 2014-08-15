@@ -17,7 +17,7 @@ public class ActionsNewActivity extends Activity implements FragmentActionsHeadl
     protected void onCreate(Bundle savedInstanceState) {
     	
         super.onCreate(savedInstanceState);
-       setContentView(R.layout.new_activity_layout);
+        setContentView(R.layout.new_activity_layout);
        
         Log.d("actionsNewActivity", "funcionou");
 

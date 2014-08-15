@@ -1,6 +1,8 @@
 package gls.app.makescape_ethogram;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
@@ -9,6 +11,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -61,14 +64,40 @@ public class SelectTargetActivity extends Activity implements
 			image.setX(pos_x);
 			image.setY(pos_y);
 			rl.addView(image);
-	
-			return true;
+
+            promptTargetDescription();
+            return true;
 			}
-			
 		return true;
 	}
 
-	@Override
+    private void promptTargetDescription() {
+        //get the target description via alert window
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Target Description");
+        alert.setMessage(R.string.selector_prompt_targ);
+        final EditText input = new EditText(this);
+        alert.setView(input);
+
+        alert.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String description = String.valueOf(input.getText());
+                DataSingleton.getSingleton().setTargetDescription(description);
+            }
+        });
+
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DataSingleton.getSingleton().setTargetDescription("None");
+            }
+        });
+
+        alert.show();
+    }
+
+    @Override
 	public boolean onDoubleTapEvent(MotionEvent e) {
 		// Log.d(DEBUG_TAG, "this was a double tap event");
 		return false;

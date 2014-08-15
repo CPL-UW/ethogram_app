@@ -3,6 +3,11 @@ package gls.app.makescape_ethogram;
 import android.annotation.SuppressLint;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,12 +17,14 @@ import org.json.JSONObject;
 
 public class JSONHandler {
 
-	private JSONObject json; 
+	private JSONObject json;
 	private String[] headline_array;
 	Map options_map ;
+    private static FileOutputStream out;
+    private static BufferedReader reader;
 
 
-	public JSONHandler(JSONObject json) {
+    public JSONHandler(JSONObject json) {
 		this.json = json;
 	}
 
@@ -47,8 +54,8 @@ public class JSONHandler {
 
 	public void parseJSON() throws JSONException
 	{
-		
-		
+
+		//Correct format for config file after turned into json
 		/*{
 		    "Root": {
 		        "num_headlines": 2,
@@ -81,6 +88,7 @@ public class JSONHandler {
 		options_map = new HashMap<Integer, Headline>();
 
 		JSONObject object = json.getJSONObject("Root");
+        Log.d("parsing", object.toString());
 		int num_headlines = 2;
 		try {
 			num_headlines = object.getInt("num_headlines");	
@@ -124,4 +132,25 @@ public class JSONHandler {
 		DataSingleton.getSingleton().setHeadlinesArray(headline_array);
 		DataSingleton.getSingleton().setHeadline_map(options_map);
 	}
+
+
+
+    public String csvToJSON(InputStream in) throws IOException {
+        json = new JSONObject();
+        reader = new BufferedReader(new InputStreamReader(in));
+
+
+        String headlines = reader.readLine();
+
+        String json = "{\"Root\" : {";
+
+        //TODO: add all info from config file
+
+
+        json = json + "}}";
+
+
+        return "";
+    }
+
 }

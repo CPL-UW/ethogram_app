@@ -4,7 +4,6 @@ import java.util.Map;
 
 import android.app.Fragment;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class FragmentActionsOptions extends Fragment implements AdapterView.OnItemClickListener{
@@ -31,7 +29,6 @@ public class FragmentActionsOptions extends Fragment implements AdapterView.OnIt
 		return view;
 	}
 
-	
 	public void changeData(int position) {
 
 		ArrayAdapter adapter;
@@ -47,8 +44,9 @@ public class FragmentActionsOptions extends Fragment implements AdapterView.OnIt
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		Intent intent = null ;
-		
-		Map<Integer, Headline> map = DataSingleton.getSingleton().getHeadline_map();
+        //TODO: setActionString()
+        Log.d("frag click", String.valueOf(id));
+        Map<Integer, Headline> map = DataSingleton.getSingleton().getHeadline_map();
 		if (map.get(father_position).getHasTarget().contains(position))
 		{
 			intent = new Intent(getActivity().getBaseContext(), SelectTargetActivity.class);

@@ -18,14 +18,18 @@ public class ConfirmEntryActivity extends Activity {
 		Time time = new Time();
 		time.setToNow();
 
-		// Create the text view
+		// Create the text view from Data Singleton
 		TextView timeEntryView = (TextView) findViewById(R.id.TimeEntry);
 		timeEntryView.setText(time.format3339(false));
-		TextView subjectEntryView = (TextView) findViewById(R.id.subject);
-		subjectEntryView.setText(DataSingleton.getSingleton()
-				.getSubjectString());
-		TextView targetEntryView = (TextView) findViewById(R.id.target);
-		targetEntryView.setText(DataSingleton.getSingleton().getTargetString());
+
+        TextView subjectEntryView = (TextView) findViewById(R.id.subject);
+		subjectEntryView.setText(DataSingleton.getSingleton().getSubjectDescription());
+        TextView targetEntryView = (TextView) findViewById(R.id.target);
+        targetEntryView.setText(DataSingleton.getSingleton().getTargetDescription());
+
+
+        TextView actionView = (TextView) findViewById(R.id.action);
+        actionView.setText(DataSingleton.getSingleton().getActionString());     //TODO: where should the action string be set?
 
 	}
 
@@ -53,6 +57,7 @@ public class ConfirmEntryActivity extends Activity {
 	}
 
 	public void confirmButton(View v) {
+        //TODO: store JSON somewhere
 		Toast.makeText(this, "Entry saved", Toast.LENGTH_LONG).show();
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
