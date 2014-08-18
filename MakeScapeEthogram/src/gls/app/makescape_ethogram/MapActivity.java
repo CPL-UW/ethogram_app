@@ -1,6 +1,8 @@
 package gls.app.makescape_ethogram;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
@@ -13,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView.FindListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -31,7 +34,7 @@ public class MapActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
-		Toast.makeText(this, "Mark the position of the Subject",
+		Toast.makeText(this, "Double Tap to Mark the position of the Subject",
 				Toast.LENGTH_LONG).show();
 		mDetector = new GestureDetectorCompat(this, this);
 		mDetector.setOnDoubleTapListener(this);
@@ -78,10 +81,10 @@ public class MapActivity extends Activity implements
 			image.setX(pos_x);
 			image.setY(pos_y);
 			rl.addView(image);
-	
-			return true;
+
+            promptSubjectDescription();
+            return true;
 			}
-			
 		return true;
 	}
 
@@ -148,7 +151,33 @@ public class MapActivity extends Activity implements
 		Intent intent = new Intent(this, ActionsNewActivity.class);
 		startActivity(intent);
 	}
-	
+
+    public void promptSubjectDescription() {
+        //get the subject description via alert window
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Subject Description");
+        alert.setMessage(R.string.selector_prompt_subj);
+        final EditText input = new EditText(this);
+        alert.setView(input);
+
+        alert.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String description = String.valueOf(input.getText());
+                DataSingleton.getSingleton().setSubjectDescription(description);
+            }
+        });
+
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DataSingleton.getSingleton().setSubjectDescription("None");
+            }
+        });
+
+        alert.show();
+    }
+
 	public void clearActivity(View v)
 	{
 		recreate();
